@@ -1,0 +1,15 @@
+# Raw / generated datasets
+03-sea-turtle-video-detection/data/raw_SET_A/
+03-sea-turtle-video-detection/data/yolo/
+03-sea-turtle-video-detection/data/yolo_split/
+
+# YOLO training outputs
+03-sea-turtle-video-detection/notebooks/runs/
+
+# Model weights
+03-sea-turtle-video-detection/notebooks/weights/
+
+# Common ML model files
+*.pt
+*.pth
+*.onnx
