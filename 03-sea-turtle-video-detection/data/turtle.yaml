@@ -1,0 +1,9 @@
+
+path: E:\Code\ai-aquaculture-research-demos\03-sea-turtle-video-detection\data\yolo_split
+
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: sea-turtle

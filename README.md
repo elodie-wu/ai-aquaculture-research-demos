@@ -4,11 +4,11 @@ A collection of applied AI experiments exploring how machine learning, optimisat
 
 ## 📚 Projects
 
-| Project                                                                                       | Topic                                           | Methods                                           | Status         |
-| --------------------------------------------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------- | -------------- |
-| [🌊 Environmental Risk and Anomaly Detection](./01-environmental-risk-and-anomaly-detection/) | Water-quality assessment and anomaly detection  | Random Forest, GA, NSGA-II, Isolation Forest, LOF | ✅ Completed   |
-| [🐠 Fish Disease Detection](./02-fish-disease-detection/)                                     | Fish health image classification                | CNN, Transfer Learning                            | ✅ Completed   |
-| [🦭 Marine Wildlife Object Detection](./03-marine-wildlife-object-detection/)                 | Protected-species and marine wildlife detection | Object Detection, YOLO                            | 🚧 In Progress |
+| Project                                                                                       | Topic                                          | Methods                                           | Status         |
+| --------------------------------------------------------------------------------------------- | ---------------------------------------------- | ------------------------------------------------- | -------------- |
+| [🌊 Environmental Risk and Anomaly Detection](./01-environmental-risk-and-anomaly-detection/) | Water-quality assessment and anomaly detection | Random Forest, GA, NSGA-II, Isolation Forest, LOF | ✅ Completed   |
+| [🐠 Fish Disease Detection](./02-fish-disease-detection/)                                     | Fish health image classification               | CNN, Transfer Learning                            | ✅ Completed   |
+| [🐢 Sea Turtle Detection in Video](./03-sea-turtle-video-detection/)                          | Protected species detection in video           | Object Detection, YOLO                            | 🚧 In Progress |
 
 ## 🧰 Technologies
 
