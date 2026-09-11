@@ -94,7 +94,6 @@ This suggests that the CNN may not always rely only on disease-related features.
 - Some fresh and infected fish look visually similar.
 - The model may learn background or image-specific patterns.
 - The dataset only contains two classes, so the model cannot identify specific fish diseases.
-- The dataset is not specific to New Zealand Chinook salmon.
 
 ## 🚀 Future Work
 
