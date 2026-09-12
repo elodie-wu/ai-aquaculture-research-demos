@@ -1,58 +1,76 @@
-# 🐢 Sea Turtle Video Detection with YOLO11
+# 🐢 Sea Turtle Detection in Video
 
-A computer vision demo exploring lightweight object detection for identifying sea turtles in image and video data.
+This project explores how YOLO can be used to detect sea turtles in video frames and build a simple protected-species video detection prototype.
 
-## 📌 Overview
+## 📊 Dataset
 
-This project uses a pretrained YOLO11 model and transfer learning to detect sea turtles from annotated imagery.
+**Dataset:** [GTST-2023](https://doi.org/10.34740/kaggle/ds/5348665)
 
-## 📂 Dataset
+GTST-2023 contains sea turtle videos, extracted frames, and object-detection annotations. The full dataset includes 42 videos and 14,471 annotated frames. citeturn963189search0turn963189search2
 
-The project uses the **GTST-2023 Green Sea Turtle dataset**, a public image and video dataset containing annotated footage of nesting green sea turtles.
+This project uses 12 video sequences and 6,580 annotated frames.
 
-The dataset includes:
+The dataset was split by complete video sequence to reduce data leakage between similar consecutive frames:
 
-- 🖼️ Video and image data
-- 📦 Bounding-box annotations for sea-turtle detection
-- 🌊 Natural background and lighting variation
+- Train: 4,309 images
+- Validation: 1,407 images
+- Test: 864 images
 
-Dataset source:  
-https://www.kaggle.com/datasets/william2020/gtst-2023
+## 🎯 Project Goals
 
-Reference:  
-_GTST-2023: An image and video dataset of nesting green sea turtles with annotated data_
+1. Train a YOLO model to detect sea turtles.
+2. Evaluate the model on unseen video sequences.
+3. Apply the trained model to video inference.
 
-> The dataset is not included directly in this repository. Please obtain it from the original source and follow the dataset licence and attribution requirements.
+## 🧠 Methods
 
-## 🤖 Model
+- JSON annotation to YOLO format conversion
+- Video-level train / validation / test split
+- YOLO11n with pretrained weights
+- 20 training epochs
+- GPU training with CUDA
 
-The current baseline uses:
+## 📈 Main Results
 
-- **YOLO11n**
-- Pretrained weights
-- Image size: `640 × 640`
-- Batch size: `8`
-- Training epochs: `20`
-- CUDA acceleration
-- Single-class sea-turtle detection
+### Validation
 
-YOLO11n was selected as the initial model because it is lightweight and suitable for fast object detection.
+- Precision: **0.990**
+- Recall: **0.966**
+- mAP@0.5: **0.984**
+- mAP@0.5:0.95: **0.922**
 
-## 📊 Evaluation
+### Test
 
-The trained model achieved the following validation results:
+- Precision: **0.989**
+- Recall: **0.973**
+- mAP@0.5: **0.984**
+- mAP@0.5:0.95: **0.896**
 
-| Metric            |            Result |
-| ----------------- | ----------------: |
-| 🎯 Precision      |         **0.990** |
-| 🔍 Recall         |         **0.966** |
-| 📈 mAP@50         |         **0.984** |
-| 📉 mAP@50–95      |         **0.922** |
-| ⚡ Inference time | **~1.1 ms/image** |
+The model also successfully generated sea turtle bounding boxes and confidence scores on an original video.
 
-Validation data:
+![Sea Turtle Detection Example](assets/turtle_detection_example.jpg)
 
-- **1,407 images**
-- **1,054 annotated instances**
+## 🔍 Key Findings
 
-The baseline results show high precision and recall, providing a strong starting point for further analysis and model refinement.
+YOLO11n achieved strong detection performance on the GTST-2023 subset.
+
+Using video-level splitting helped reduce leakage from highly similar consecutive frames.
+
+## ⚠️ Limitations
+
+- Only 12 video sequences were used.
+- The model detects only one class: sea turtle.
+- The dataset contains nesting sea turtles rather than fisheries onboard footage.
+- Performance in other marine environments has not been tested.
+
+## 🚀 Future Work
+
+- use more GTST-2023 videos
+- compare larger YOLO models
+- add multi-class protected-species detection
+- add object tracking
+- test on fisheries onboard footage
+
+## 🛠 Technologies
+
+Python, PyTorch, Ultralytics YOLO, OpenCV, Matplotlib, CUDA
