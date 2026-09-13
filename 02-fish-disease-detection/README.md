@@ -9,7 +9,7 @@ The goal is to classify salmon images into two classes:
 
 ## 📊 Dataset
 
-**Dataset:** SalmonScan
+**Dataset:** [SalmonScan](https://data.mendeley.com/datasets/x3fz2nfm4w/1)
 
 The dataset contains:
 
